@@ -1,0 +1,349 @@
+/* NOTES */
+/*  */
+/* Use px (pixels) for spacing, they're absolute values */
+/* Use rem or em for font measurements, they will be relative to browser settings */
+/*  */
+
+
+/*  */
+/*  */
+/* ELEMENTS */
+/*  */
+/*  */
+
+/* L64: height deleted to remove gradient colour anomoly   */
+html { 
+    /* ensures there is no cut off point at the bottom of page on very large screen */
+    /* height: 100%; */
+    /* L70: moved from 'body' tag as there cannot be two of them in the same tag */
+background-image: linear-gradient(#21a7d8, #119785);
+ } 
+
+body {
+    background-image: url(/images/image-lion-background.png) ;
+    /* controls image position */
+    background-position: top center;
+    /* ensures image appears only once */
+    background-repeat: no-repeat;
+
+    /* applies to whole website but these properties can be overriden later */
+    font-family: 'Roboto', sans-serif;
+    color: white;
+
+    /* 1rem = 16px */
+    font-size: 1.125rem;
+}
+
+/* header parent tag controls the logo and nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    /* L63: for horizontal rule/line, use this instead of 'hr' tag in html */
+    /* values: weight, style, colour */
+    border-bottom: 2px solid lightgrey;
+}
+
+main {
+    min-height: 300px;
+    /* displays herobox 1 & 2 next to each other */
+    display: flex;
+    /* now center them */
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3.25rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    /* L58: text effects */
+    /* 4 values: x, y, blur, colour(opacity adjustable) */
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.445);
+}
+
+h2 {
+    font-size:  2rem;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+}
+
+p {
+    /* spacing between lines */
+    line-height: 1.75rem;
+    /* spacing between p tags */
+    margin-bottom: 0.5rem;
+}
+
+form {
+    /* allows submit button to have a gap from cards */
+    margin: 40px 0px;
+}
+
+
+/*  */
+/*  */
+/* CLASSES */
+/*  */
+/*  */
+
+.container {
+    width: 1024px;
+    /* this will allow height to adapt to its contents so it fits inside */
+    min-height: 300px;
+    /* centres the container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* parent tag for the (child) cards 1,2,3 */
+.cards {
+    /* the cards within now display on one line */
+    display: flex;
+    /* creates space between each card */
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Each card has a 'supporting' background image declared in CSS, it is easier to place other graphics on top of them here than in the HTML*/
+.card1 {
+    background-image: url(/images/image-background-card1.jpg);
+    background-size: cover;
+    /* image is visible going from the bottom to top */
+    background-position: bottom;
+    min-height: 250px;
+    width: 30%;
+    /* L58: text effects */
+    /* 4 values: x, y, blur, colour(opacity adjustable) */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
+}
+
+.card2 {
+    background-image: url(/images/image-background-card2.jpg);
+    background-size: cover;
+    /* image is visible going from the bottom to top */
+    background-position: bottom;
+    min-height: 250px;
+    width: 30%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
+}
+
+.card3 {
+    background-image: url(/images/image-background-card3.jpg);
+    background-size: cover;
+    /* image is visible going from the bottom to top */
+    background-position: bottom;
+    min-height: 250px;
+    width: 30%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.486);
+}
+
+/* targets all three cards */
+.card1, .card2, .card3 {
+    padding: 30px 30px 20px 30px;
+    /* produces gaps between cards */
+    box-sizing: border-box;
+}
+
+.herobox1 {  
+    /* uses ratio to size this box */
+    flex: 2;
+    /* spaces text away from edge of box */
+    padding-right: 100px;
+}
+
+.herobox2 {
+    /* ratio used to size this box */
+    flex: 1;
+}
+
+.mybutton {
+    background-color: white;
+    color: #4340fa;
+    font-family: 'Playfair Display', serif;
+    /* 2 values: top/bottom, left/right */
+    padding: 11px 25px;
+    /* L57: adds rounded corners */
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.315);
+}
+
+.navbutton {
+/* L62, values are: weight, style, colour */
+border: 2px solid white;
+padding: 10px 25px;
+font-family: 'Playfair Display', serif;
+/* buttons show on one line */
+display: inline-block;
+/* ensures menu button stack on each other */
+position: relative;
+} 
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  /* horizontal gaps between boxes */
+  justify-content: space-between;
+  /* allows for space at bottom of page */
+  margin-bottom: 100px;
+}
+
+.tbox {
+    width: 47%;
+    padding: 50px;
+    border: 1px solid white;
+      box-sizing: border-box;
+      /* vertical gaps between boxes  */
+      margin-top: 50px;
+}
+
+.dropdown {
+    display: none;
+    padding-top: 20px;
+    text-align: center;
+    /* ensures menu buttons are relative to absolute position of dropdown */
+    position: absolute;
+    /* ensures dropdown menu displays above website image and text contents */
+    z-index: 1;
+}
+
+.inputwrapper {
+    margin-bottom: 20px;
+}
+
+/*  */
+/*  */
+/* COMPOUND SELECTORS */
+/*  */
+/*  */
+
+/* targets all 'p' tags inside 'cards' class */
+.cards p {
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    /* 4 values: top, right, bottom, left */
+    /* 2 values: top/bottom, right/left */
+    margin-top: 10px;
+}
+
+/* 'i' is ICON tag */
+.cards i {
+    font-size: 100px;
+}
+
+/* 'a' tags with class of 'mybutton' */
+a.mybutton {
+    /* L56: 'a' tag is block element by default */
+    /* changing to inline-block allows adding margin */
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* 'nav' with 'a' tag with class 'mybutton' */
+nav a.mybutton {
+    margin-left: 30px;
+}
+
+/* target the navbutton class INSIDE dropdown */
+.dropdown .navbutton {
+    background-color: white;
+    transition-duration: 0.5s;
+    width: 140px;
+}
+
+/* target 'a' tags in navbutton class INSIDE dropdown */
+
+.dropdown .navbutton a {
+    /* changes text color */
+    color: rgb(38, 112, 70);
+}
+
+.newline {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.buttonmargin {
+    margin-right: 20px;
+}
+
+
+/*  */
+/*  */
+/* PSEUDO CLASSES */
+/*  */
+/*  */
+
+/* L66: target the hover FUNCTION of 'mybutton' class */
+.mybutton:hover {
+    background-color: rgb(221, 156, 219);
+    transition-duration: 1s;
+}
+
+/* L66: target 'last of type: p' INSIDE class 'tbox' */
+.tbox p:last-of-type {
+    font-size: 0.8rem;
+    padding-left: 30px;
+}
+/* above can also be achived as follows */
+/* target 'last-child' inside 'tbox' class */
+/* i.e. the second 'p' tag */
+/* .tbox :last-child {
+    font-size: 0.8rem;
+} */
+
+
+/* on hover target navbutton class inside dropdown and change colour */
+.dropdown .navbutton:hover {
+    background-color: rgb(218, 156, 215);
+    transition-duration: 0.5s;
+}
+
+/* shows drop down menu on mouse hover */
+/* L67: target dropdown class INSIDE navbutton on hover */
+.navbutton:hover .dropdown {
+    display: block;  
+}
+
+/*  */
+/*  */
+/* FORMS */
+/*  */
+/*  */
+
+/* targets and styles the fields for these boxes */
+input[type=text], input[type=email], textarea {
+    padding: 12px 20px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    /* L78: input fields width is not too long */
+    box-sizing: border-box;
+}
+
+input[type=radio] {
+    margin-right: 10px;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* CONTACT.HTML styling */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+.main2 {
+    min-height: 300px;
+    padding-top: 50px;
+}
