@@ -20,7 +20,10 @@ background-image: linear-gradient(#21a7d8, #119785);
  } 
 
 body {
-    background-image: url(images/image-lion-background.png) ;
+    
+    /* CHANGE for GITHUB: '/' removed at start of string */
+    background-image: url(images/image-lion-background.png);
+    
     /* controls image position */
     background-position: top center;
     /* ensures image appears only once */
@@ -113,7 +116,10 @@ form {
 
 /* Each card has a 'supporting' background image declared in CSS, it is easier to place other graphics on top of them here than in the HTML*/
 .card1 {
+    
+    /* CHANGE for GITHUB: '/' removed at start of string */
     background-image: url(images/image-background-card1.jpg);
+    
     background-size: cover;
     /* image is visible going from the bottom to top */
     background-position: bottom;
@@ -125,7 +131,10 @@ form {
 }
 
 .card2 {
+    
+    /* CHANGE for GITHUB: '/' removed at start of string */
     background-image: url(images/image-background-card2.jpg);
+    
     background-size: cover;
     /* image is visible going from the bottom to top */
     background-position: bottom;
@@ -135,7 +144,10 @@ form {
 }
 
 .card3 {
+    
+    /* CHANGE for GITHUB: '/' removed at start of string */
     background-image: url(images/image-background-card3.jpg);
+    
     background-size: cover;
     /* image is visible going from the bottom to top */
     background-position: bottom;
